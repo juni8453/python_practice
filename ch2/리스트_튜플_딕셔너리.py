@@ -26,5 +26,6 @@ students[0] = 'Nori'
 my_tuple = ('딸기', '포도', '바나나')
 print(my_tuple)
 
+# Dictionary 는 Map 과 비슷, key 값으로 value 값을 출력할 수 있다.
 my_dict = {'Tany':'남', 'Dongi':'남', 'Hoo':'여'}
 print(my_dict['Tany'])

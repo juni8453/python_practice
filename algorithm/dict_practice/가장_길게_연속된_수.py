@@ -2,6 +2,12 @@ def longestConsecutive(nums):
   longest = 0
   num_dict = {}
 
+  # Hash Set 을 사용하면 Value 없이 깔끔하게 한 줄로 셋팅할 수 있다.
+  # num_dict = set(nums)
+
+  # value 값을 의미있게 사용할 수 있도록 할 수 있다.
+  # num_dict = {x : x + 1 for x in nums}
+
   for num in nums:
     num_dict[num] = True
 

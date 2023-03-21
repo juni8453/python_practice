@@ -1,11 +1,11 @@
 def twoSum(nums, target):
   data = dict()
 
-  for key in nums:
+  for key in nums: # O(N)
     data[key] = 1
 
-  for key in nums:
-    if target - key in data:
+  for key in nums: # O(N)
+    if target - key in data: # O(1)
       return True
   return False
 

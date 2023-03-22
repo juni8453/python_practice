@@ -10,7 +10,7 @@ def bfs(root):
 
   while q:
     cur_node = q.popleft()
-    visited.append(cur_node)
+    visited.append(cur_node) # 필수는 아님(문제마다 다름)
 
     if cur_node.left:
       q.append(cur_node.left)

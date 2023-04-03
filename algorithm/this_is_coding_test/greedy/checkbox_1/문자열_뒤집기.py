@@ -1,6 +1,6 @@
 data = input()
 init = ''
-count = 0
+coins = 0
 
 if data[0] == '1':
   init = '1'
@@ -13,13 +13,13 @@ if init == '0':
   for i in range(len(data) - 1):
     if data[i + 1] != data[i]:
       if data[i + 1] == '1' and data[i] == '0':
-        count += 1
+        coins += 1
 
 elif init == '1':
   # 1로 시작하는 경우에는 0으로 바뀌는 경우에 count
     for i in range(len(data) - 1):
       if data[i + 1] != data[i]:
         if data[i + 1] == '0' and data[i] == '1':
-          count += 1
+          coins += 1
 
-print(count)
+print(coins)

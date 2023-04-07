@@ -12,7 +12,6 @@ max_answer = -1e9
 min_answer = 1e9
 
 def dfs(depth, result):
-  global n
   global max_answer
   global min_answer
 

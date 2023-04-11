@@ -29,9 +29,9 @@ def get_next_pos(pos, board):
   # 2. 세로 -> 가로로 회전하는 경우
   if y1 == y2:
     for i in [-1, 1]:
-      if board[x1][y1 + 1] == 0 and board[x2][y2 + i] == 0:
-        next_pos.append({(x1, y1), (x1, y1 + 1)})
-        next_pos.append({(x2, y2), (x2, y2 + 1)})
+      if board[x1][y1 + i] == 0 and board[x2][y2 + i] == 0:
+        next_pos.append({(x1, y1), (x1, y1 + i)})
+        next_pos.append({(x2, y2), (x2, y2 + i)})
 
   return next_pos
 

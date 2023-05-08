@@ -31,6 +31,3 @@ def solution(n, stages):
 print(solution(5, [2, 1, 2, 6, 2, 4, 3, 3]))
 print(solution(4, [4, 4, 4, 4, 4]))
 print(solution(5, [3, 3, 3, 3]))
-
-
-# 스테이지에 도달한 유저가 없는 경우 해당 스테이지의 실패율은 0 으로 정의한다.

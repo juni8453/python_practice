@@ -1,44 +1,16 @@
 def solution(brown, yellow):
-    answer = []
     sum_tile_count = brown + yellow
 
     for h_len in range(3, sum_tile_count):
+        # 가로 >= 세로
         w_len = sum_tile_count // h_len
-        b_count = 0
-        y_count = 0
 
-        # h_len = 3, w_len = 4
-        grid = [[''] * w_len for _ in range(h_len)]
+        # 전체 넓이를 세로 길이로 나눴을 때 나머지가 존재하면 안됨
+        if sum_tile_count % h_len != 0:
+            continue
 
-        # 맨 위 B
-        for i in range(w_len):
-            grid[0][i] = 'B'
-
-        # 맨 아래 B
-        for i in range(w_len):
-            grid[h_len - 1][i] = 'B'
-
-        # 맨 왼쪽 B
-        for i in range(h_len):
-            grid[i][0] = 'B'
-
-        # 맨 오른쪽 B
-        for i in range(h_len):
-            grid[i][w_len - 1] = 'B'
-
-        for i in range(len(grid)):
-            for j in range(len(grid[i])):
-                if grid[i][j] == 'B':
-                    b_count += 1
-                else:
-                    y_count += 1
-
-        if b_count == brown and y_count == yellow:
-            answer.append(w_len)
-            answer.append(h_len)
-            break
-
-    return answer
+        if (w_len - 2) * (h_len - 2) == yellow:
+            return [w_len, h_len]
 
 print(solution(10, 2))
 print(solution(8, 1))

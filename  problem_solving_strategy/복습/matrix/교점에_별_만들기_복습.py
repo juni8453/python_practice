@@ -1,10 +1,10 @@
 def solution(line):
     answer = []
     position = []
-    max_x = -2100000000
-    max_y = -2100000000
-    min_x = 2100000000
-    min_y = 2100000000
+    max_x = -1e15
+    max_y = -1e15
+    min_x = 1e15
+    min_y = 1e15
 
     for i in range(len(line)):
         a, b, e = line[i]
@@ -19,19 +19,21 @@ def solution(line):
             x = (b * f - e * d) / (a * d - b * c)
             y = (e * c - a * f) / (a * d - b * c)
 
-            # 정수형 교점만 취급하도록 설정
+            # 정수형 교점만 저장
             if x == int(x) and y == int(y):
-                position.append([int(x), int(y)])
+                x = int(x)
+                y = int(y)
+                position.append([x, y])
 
                 # 교점을 구하는 즉시 2차원 배열을 위한 max_x, min_x, max_y, min_y 를 구해준다.
                 if max_x < x:
-                    max_x = int(x)
+                    max_x = x
                 if max_y < y:
-                    max_y = int(y)
+                    max_y = y
                 if min_x > x:
-                    min_x = int(x)
+                    min_x = x
                 if min_y > y:
-                    min_y = int(y)
+                    min_y = y
 
     # 별을 찍을 2차원 배열 생성
     grid = [['.' for _ in range(min_x, max_x + 1)] for _ in range(min_y, max_y + 1)]
@@ -45,6 +47,7 @@ def solution(line):
 
         answer = [''.join(grid_line) for grid_line in grid]
 
+    print()
     # 역순으로 뒤집고 반환
     return answer[::-1]
 

@@ -1,7 +1,5 @@
 def solution(rows, columns, queries):
     answer = []
-
-    # 2차원 배열을 만들어준다.
     count = 1
     grid = [[0 for i in range(rows)] for _ in range(columns)]
     for i in range(rows):

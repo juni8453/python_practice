@@ -56,3 +56,24 @@ def solution(s):
 
 
 print(solution('{{123}}'))  # (123)
+
+
+# 책 풀이
+
+def solution_book(s):
+    answer = {}
+    s = sorted(s[2:-2].split('},{'), key=len)
+
+    for tuples in s:
+        elements = tuples.split(',')
+        print('e:', elements)
+        for element in elements:
+            number = int(element)
+
+            if number not in answer:
+                answer[number] = 1
+
+    return list(answer)
+
+print(solution_book("{{2},{2, 1},{2, 1, 3},{2, 1, 3, 4}}")) # (2, 3, 4, 1)
+# print(solution_book('{{123}}'))  # (123)

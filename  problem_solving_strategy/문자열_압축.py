@@ -1,27 +1,25 @@
 def solution(s):
-    answer = len(s) # 초기 값 (압축한 값의 길이와 비교할 수 있도록)
+    answer = 1e15
 
-    for unit in range(1, len(s) // 2 + 1):
-        res = ''
-        zip_count = 1 # 현재 단위로 얼마나 압축됬는지 ?
-        slice_str = s[:unit]
+    for x in range(1, len(s) // 2 + 1):
+        comp_len = 0
+        comp = ''
+        count = 1
 
-        for i in range(unit, len(s) + 1, unit): # 단위가 증가할 수록 반복 횟수는 줄어야 한다.
-            if slice_str == s[i:i+unit]: # 압축할 수 있다면 압축 카운트 증가
-                zip_count += 1
+        for i in range(0, len(s) + 1, x):
+            slice_str = s[i:i + x]
+            if comp == slice_str:
+                count += 1
 
-            else:
-                if zip_count == 1: # 만약 하나도 압축이 안됬다면
-                    res += slice_str
-                else:
-                    res = res + str(zip_count) + slice_str
+            elif comp != slice_str:
+                comp_len += len(slice_str)
+                if count > 1:
+                    comp_len += len(str(count))
+                count = 1
+                comp = slice_str
 
-                # 다음 for 문 대비
-                slice_str = s[i:i+unit]
-                zip_count = 1
-
-        answer = min(answer, len(res))
+        answer = min(answer, comp_len)
 
     return answer
 
-print(solution(s="aabbaccc"))
+print(solution(s="abcabcdede"))

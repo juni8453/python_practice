@@ -76,4 +76,3 @@ def solution_book(s):
     return list(answer)
 
 print(solution_book("{{2},{2, 1},{2, 1, 3},{2, 1, 3, 4}}")) # (2, 3, 4, 1)
-# print(solution_book('{{123}}'))  # (123)

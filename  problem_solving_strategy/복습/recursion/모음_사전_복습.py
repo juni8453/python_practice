@@ -26,3 +26,31 @@ print(solution("AAAAE")) # 6
 print(solution("I")) # 1563
 
 # word 는 단어 사전의 몇 번째 단어인가 ?
+
+# 코드 개선
+def recursion(now_word, target_word, word_list, level):
+    if now_word == target_word:
+        return
+
+    if level == 5:
+        return
+
+    for i in ['A', 'E', 'I', 'O', 'U']:
+        new_word = ''.join([now_word, i])
+        word_list.append(new_word)
+        recursion(new_word, target_word, word_list, level + 1)
+
+
+def solution(target_word):
+    word_list = []
+
+    recursion('', target_word, word_list, 0)
+
+    # 모음 사전에 단어를 기록했기 때문에 몇 번째 인덱스인지 찾는다.
+    return word_list.index(target_word) + 1
+
+
+print(solution("AAAAE")) # 6
+print(solution("I")) # 1563
+
+# word 는 단어 사전의 몇 번째 단어인가 ?

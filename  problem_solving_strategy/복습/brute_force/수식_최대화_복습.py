@@ -37,7 +37,3 @@ def solution(expression):
 
 print(solution("100-200*300-500+20"))
 print(solution("50*6-3*2"))
-
-
-# index() 는 찾아낸 첫 번째 요소만 찾으니 다른 똑같은 요소의 인덱스 위치를 알기 위해선
-# 계산된 결과를 계속해서 expression 에 갱신해야한다.

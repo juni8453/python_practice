@@ -33,10 +33,6 @@ def solution2(phone_book):
 
     return answer
 
-# print(solution2(["119", "97674223", "1195524421"]))
-# print(solution2(["123","456","789"]))
-# print(solution2(["12","123","1235","567","88"]))
-
 
 # hash 을 활용한 풀이
 def solution3(phone_book):

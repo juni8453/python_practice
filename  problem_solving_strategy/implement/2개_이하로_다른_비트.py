@@ -27,7 +27,6 @@ def solution(numbers):
             # 0 이 없는 2진수의 경우 맨 오른쪽에 '0' 추가 (뒤집었으니까)
             if find_index(bin_number, '0') == -1:
                 bin_number.append('0')
-                print(bin_number)
 
             # 뒤집어놨으니 앞에서부터 '0' 위치를 찾는다. 발견하면 바로 왼쪽의 1과 교환
             for bin_n in bin_number:

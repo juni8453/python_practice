@@ -31,8 +31,6 @@ def solution(numbers, hand):
             # x2, y2 는 타겟 키패드 위치
             # |x1-x2|+|y1-y2|
             x2, y2 = dis[number]
-            # left_interval = ((x2 - left_x1) ** 2) + ((y2 - left_y1) ** 2)
-            # right_interval = ((x2 - right_x1) ** 2) + ((y2 - right_y1) ** 2)
             left_interval = abs(left_x1 - x2) + abs(left_y1 - y2)
             right_interval = abs(right_x1 - x2) + abs(right_y1 - y2)
 

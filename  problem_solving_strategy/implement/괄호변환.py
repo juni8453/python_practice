@@ -85,6 +85,3 @@ def solution(p):
 print(solution("(()())()"))
 print(solution(")("))
 print(solution("()))((()"))
-
-# 양 괄호 개수만 같다면 '균형잡힌 괄호'
-# 균형잡힌 괄호면서 짝이 맞다면 '올바른 괄호'

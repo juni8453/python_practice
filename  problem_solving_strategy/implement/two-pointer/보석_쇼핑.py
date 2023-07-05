@@ -27,6 +27,8 @@ def solution(gems):
             if (end - start + 1) < (answer[1] - answer[0] + 1):
                 answer = [start, end]
 
+            # start 위치의 보석 개수가 현재 딕셔너리에 여러 개인지 확인
+            # 보석이 여러 개라면 뒤에 존재한다는 소리니까 start 를 오른쪽으로 한 칸 이동
             if gem_dic[gems[start]] == 1:
                 del gem_dic[gems[start]]
 
@@ -53,38 +55,8 @@ def solution(gems):
 #        "RUBY", "RUBY", "DIA", "DIA", "EMERALD", "SAPPHIRE"
 #                "RUBY", "DIA", "DIA", "EMERALD", "SAPPHIRE"
 
-print(solution(["DIA", "RUBY", "RUBY", "DIA", "DIA", "EMERALD", "SAPPHIRE", "DIA"]))
-
-
-
-
-
-# 다이아, 루비, 루비, 다이아, 다이아, 에메랄드, 사파이어, 다이아
-
-# key       value
-# 다이아        F
-# 루비         F
-# 에메랄드      F
-# 사파이어      F
-
-
-
-
-
-# 'AA', 'AB', 'AC', 'AA', 'AC'
-    # 'AA', 'AB', 'AC' 세 종류의 보석
-    # 1 ~ 3 구간
-
-# XYZ, XYZ, XYZ
-    #  한 종류의 보석
-    # 1 ~ 1 구간
-
-# ZZZ, YYY, NNNN, YYY, BBB
-    # ZZZ, YYY, NNNN, BBB 네 종류의 보석
-    # 1 ~ 5 구간
-
-
-    # ZZZ   # False -> lt 확인 -> 포함되지 않은 보석인 경우니 True 로 변경 -> rt += 1
-    # YYY   # False -> rt 확인 -> 포함되지 않은 보석인 경우니 True 로 변경 -> rt += 1
-    # NNNN  # False -> rt 확인 -> 포함되지 않은 보석인 경우니 True 로 변경 -> rt += 1
-    # BBB   # False
+# print(solution(["DIA", "RUBY", "RUBY", "DIA", "DIA", "EMERALD", "SAPPHIRE", "DIA"]))
+# print(solution(["ZZZ", "YYY", "NNNN", "YYY", "BBB"]))
+# print(solution(["AA", "AB", "AC", "AA", "AC"]))
+# print(solution(["XYZ", "XYZ", "XYZ"]))
+print(solution(['A', 'A', 'A', 'B', 'B', 'C', 'C', 'B', 'A']))

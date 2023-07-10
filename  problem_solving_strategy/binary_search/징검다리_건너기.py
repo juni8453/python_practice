@@ -10,14 +10,10 @@ def solution(stones, k):
         skip_stone = 0
         mid = (start + end) // 2
 
-        # 현재 디딤발 허용 횟수와 임의의 통과 인원수를 뺀 값이 0 보다 작거나 같다면 (즉, mid 명이 지나갔을 떄 음수 또는 0이 되는 경우)
-        # 건너뛰어야 하므로 skip_stone 을 하나 추가한다.
         for stone in stones:
             if stone < mid:
                 skip_stone += 1
 
-                # 건너뛰어야 하는 디딤돌 개수가 한 번에 건너뛸 수 있는 디딤돌 개수인 k 보다 같거나 많으면 (같아도 건너뛰지 못하니까)
-                # 더 이상 탐색의 의미가 없으므로 범위를 줄이고 for 문을 탈출한다.
                 if skip_stone >= k:
                     break
 

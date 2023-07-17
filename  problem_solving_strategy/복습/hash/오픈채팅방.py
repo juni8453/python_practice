@@ -9,7 +9,6 @@ def solution(records):
         uid = split[1]
         nickname = ''
 
-        # Leave 가 아닌 경우 nickname 변수 값 할당
         if sign != 'Leave':
             nickname = split[2]
 

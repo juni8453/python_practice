@@ -9,7 +9,7 @@ def solution(genres, plays):
     for i in range(len(genres)):
         play_count[genres[i]] = play_count.get(genres[i], 0) + plays[i]
 
-    # 1-1. 총 재생 횟수의 Key 값으로 Value 를 추출하고, 해당 Value 기준 내림차
+    # 1-1. 총 재생 횟수의 Key 값으로 Value 를 추출하고, 해당 Value 기준 내림차순 정렬
     # ['pop', 'classic']
     sorted_genres = sorted(play_count, key=lambda x: play_count[x], reverse=True)
 

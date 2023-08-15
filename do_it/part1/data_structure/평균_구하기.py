@@ -1,15 +1,21 @@
-n = int(input())
-grades = list(map(int, input().split()))
+import sys
+
+# 1. 최대값을 고른다 = M
+# 2. 모든 점수를 (점수/M*100) 으로 수정
+
+n = int(sys.stdin.readline())
+ranks = list(map(int, sys.stdin.readline().split()))
+new_ranks = []
+
+M = max(ranks)
+
+for cur_rank in ranks:
+    new_rank = cur_rank / M * 100
+    new_ranks.append(new_rank)
+
 sum = 0
-average = 0
+for new_rank in new_ranks:
+    sum += new_rank
 
-# 최고 점수 구하기
-max = max(grades)
-
-# 점수 조작
-for i in grades:
-    sum += (i / max * 100)
-
-# 조작된 점수의 평균 값
-average = sum / n
-print(average)
+answer = sum / n
+print(answer)

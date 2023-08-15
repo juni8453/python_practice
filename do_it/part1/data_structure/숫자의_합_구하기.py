@@ -1,11 +1,10 @@
-n = int(input())
-number = input()
+import sys
 
-num_split = list(number)
+n = int(sys.stdin.readline())
+number = list(sys.stdin.readline().rstrip())
+answer = 0
 
-sum = 0
-for i in num_split:
-    sum += int(i)
+for num in number:
+    answer += int(num)
 
-print(sum)
-
+print(answer)

@@ -15,6 +15,9 @@ def solution(nums, target):
     right_p = len(nums) - 1
 
     for _ in range(len(nums)):
+        if left_p == right_p:
+            return [0, 0]
+
         sum_left_right = nums[left_p] + nums[right_p]
 
         if sum_left_right == target: # 3

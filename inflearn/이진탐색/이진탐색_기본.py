@@ -1,7 +1,7 @@
 def solution(nums, target):
     answer = -1
     start = 0
-    end = len(nums)
+    end = len(nums) - 1
 
     while start <= end: # 곂쳤을 떄 판단 필요
         mid = (start + end) // 2
